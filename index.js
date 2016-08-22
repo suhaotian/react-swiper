@@ -129,13 +129,9 @@ Swiper.propTypes = {
   preventDefault: PropTypes.bool,
   onSwipe: PropTypes.func,
   onSwipeLeft: PropTypes.func,
-  onSwipeUpLeft: PropTypes.func,
   onSwipeUp: PropTypes.func,
-  onSwipeUpRight: PropTypes.func,
   onSwipeRight: PropTypes.func,
-  onSwipeDownRight: PropTypes.func,
   onSwipeDown: PropTypes.func,
-  onSwipeDownLeft: PropTypes.func,
 }
 
 Swiper.defaultProps = {
