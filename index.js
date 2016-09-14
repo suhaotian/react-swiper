@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 
-
 class Swiper extends Component {
   constructor(props) {
     super(props)
@@ -99,14 +98,15 @@ class Swiper extends Component {
       Component,
       tagName,
       children,
-      className,
-      onClick,
+      minSwipeLength,
+      moveThreshold,
+      preventDefault,
+      onSwipe,
+      onSwipeUp, onSwipeLeft, onSwipeRight, onSwipeDown,
+      ...other,
     } = this.props
+
     const RealComponent = Component ? Component : tagName
-    const other = {
-      onClick,
-      className,
-    }
     return (
       <RealComponent
         {...other}
@@ -123,7 +123,7 @@ class Swiper extends Component {
 
 Swiper.propTypes = {
   tagName: PropTypes.string,
-  component: PropTypes.element,
+  Component: PropTypes.any,
   minSwipeLength: PropTypes.number,
   moveThreshold: PropTypes.number,
   preventDefault: PropTypes.bool,
