@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
+
 class Swiper extends Component {
   constructor(props) {
     super(props)
@@ -47,7 +48,7 @@ class Swiper extends Component {
   }
 
   handleTouchMove(e) {
-    e.preventDefault()
+    this.props.preventDefault && e.preventDefault()
     if (e.touches.length !== 1 || !this.stouch) {
       return
     }
@@ -67,7 +68,6 @@ class Swiper extends Component {
     const {
       minSwipeLength,
       moveThreshold,
-      preventDefault,
       ...other
     } = this.props
 
@@ -88,7 +88,6 @@ class Swiper extends Component {
       }
       other.onSwipe && other.onSwipe(evt)
       other[method] && other[method](evt)
-      preventDefault && e.preventDefault()
     }
     this.init()
   }
@@ -133,6 +132,7 @@ Swiper.propTypes = {
   onSwipeRight: PropTypes.func,
   onSwipeDown: PropTypes.func,
 }
+
 
 Swiper.defaultProps = {
   tagName: 'div',
